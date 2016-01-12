@@ -1,84 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
-    <title>What Champ Should I Choose?</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>League of Legends- Team Builder</title>
 </head>
 
-<body>
-    <div class="row table-bordered">
-        <div class="col-md-3 table-bordered">
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
+<body ng-app="app">
+    <!--    DEPENDENCIES    -->
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/underscore/underscore.js"></script>
+    <!--    STYLES            -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!--    DATA            -->
+    <script src="data/data.js"></script>
+    <!--    Angular Controller            -->
+    <script src="OLD-Champs/ChampsController.js"></script>
+    <!-- --> 
+    <section class="bg">
+        <div ng-controller="ChampsController">
+            <h2 style="text-align: center;">League of Legends Team Builder</h2>
+            <br>
+            <table align="center" border="0" cellpadding="1" cellspacing="1">
+                <tbody class="center">
+                    <tr>
+                        <section class="frame">
+                            <td><img class="champ-image" src={{live.top}} /></td>
+                        </section>
+                        <td><img class="champ-image" src={{live.jungle}} /></td>
+                        <td><img class="champ-image" src={{live.mid}} /></td>
+                        <td><img class="champ-image" src={{live.bot}} /></td>
+                        <td><img class="champ-image" src={{live.support}} /></td>
+                    </tr>
+                    <tr>
+                        <td>Top</td>
+                        <td>Jungle</td>
+                        <td>Middle</td>
+                        <td>Bottom</td>
+                        <td>Support</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="top-champions" ng-model="live.top" ng-change="change(live.top)">
+                                <option value="data/images/Top_Placeholder.jpg"> Select a Top Champion </option>
+                                <option ng-repeat="champ in data.topChamps" value="{{champ.image}}">{{champ.name}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="jungle-champions" ng-model="live.jungle" ng-change="change(live.jungle)">
+                                <option value="data/images/Jungle_Placeholder.jpg"> Select a Jungle Champion </option>
+                                <option ng-repeat="champ in data.jungleChamps" value="{{champ.image}}">{{champ.name}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="mid-champions" ng-model="live.mid" ng-change="change(live.mid)">
+                                <option value="data/images/Mid_Placeholder.jpg"> Select a Middle Champion </option>
+                                <option ng-repeat="champ in data.midChamps" value="{{champ.image}}">{{champ.name}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="bot-champions" ng-model="live.bot" ng-change="change(live.bot)">
+                                <option value="data/images/Bot_Placeholder.jpg"> Select a Bottom Champion </option>
+                                <option ng-repeat="champ in data.botChamps" value="{{champ.image}}">{{champ.name}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="support-champions" ng-model="live.support" ng-change="change(live.support)">
+                                <option value="data/images/Support_Placeholder.jpg"> Select a Support Champion </option>
+                                <option ng-repeat="champ in data.supportChamps" value="{{champ.image}}">{{champ.name}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table> <br>
+            <button ng-click="reset()">Reset</button>
         </div>
-        <div class="col-md-6 table-bordered">
-          <div class="row table-bordered" style="text-align: center; height: 40px">
-            <div class="col-md-2 table-bordered" style="height: 40px">Rec Champs</div>
-            <div class="col-md-2 table-bordered" style="height: 40px">All Champs</div>
-            <div class="col-md-2 table-bordered" style="height: 40px">Strong Against</div>
-            <div class="col-md-2 table-bordered" style="height: 40px">Weak Against</div>
-            <div class="col-md-2 table-bordered" style="height: 40px">Even With</div>
-            <div class="col-md-2 table-bordered" style="height: 40px">Works Well With</div>
-          </div>
-          <div class="row table-bordered" style="text-align: center; height: 320px">
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-            <div class="col-md-2 table-bordered" style="height: 80px">Champ</div>
-          </div>
-          <div class="row table-bordered" style="text-align: center; height: 40px">
-            <div class="col-md-4 table-bordered" style="height: 40px">Role</div>
-            <div class="col-md-4 table-bordered" style="height: 40px">Position</div>
-            <div class="col-md-4 table-bordered" style="height: 40px">Lock In</div>
-          </div>
-          <div class="row table-bordered" style="text-align: center; height: 150px">
-            Champion Information<br>
-            <div class="col-md-6 table-bordered" style="height: 120px">Champ Lore + Info</div>
-            <div class="col-md-6 table-bordered" style="height: 120px">
-              <div class="row table-bordered" style="height: 20px">Champion Stat</div>
-              <div class="row table-bordered" style="height: 20px">Passive</div>
-              <div class="row table-bordered" style="height: 20px">Q</div>
-              <div class="row table-bordered" style="height: 20px">W</div>
-              <div class="row table-bordered" style="height: 20px">E</div>
-              <div class="row table-bordered" style="height: 20px">R</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 table-bordered">
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
-          <div class="row table-bordered" style="text-align: center; height: 110px">Player Info and Champ Select</div>
-        </div>
-    </div>
+    </section>
+    <footer>Created by Brian Nguyen at brianacnguyen@gmail.com</footer>
 </body>
 
 </html>
