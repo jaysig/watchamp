@@ -1,4 +1,5 @@
-var LolApi = require('leagueapi'),config = require('/config/config.js');
+var LolApi = require('leagueapi'),
+config = require('/config/config.js');
 
 
 LolApi.init(leagueAPIKey, 'na');
