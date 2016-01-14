@@ -30,3 +30,10 @@ dist/
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules/
 bower_components/
+
+#Config
+./server/config/config.js
+/server/config/config.js
+/server/config/helpers.js
+server/config/middleware.js
+config.js
