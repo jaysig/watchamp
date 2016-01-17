@@ -1,4 +1,4 @@
-# Project Name #
+# WatChamp #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -19,25 +19,29 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > League of Legends Balanced Team Builder.
 ## Sub-Heading ##
-  > For Rioters looking to build the dream team.
+  > For Summoners looking to build the dream team.
 
 ## Summary ##
-  > This application helps you build the perfect team for your game on Summoner's Rift based on your choice of champions. Simply pick the position and champion you'd like to play and see your dream (team) comes true. 
+  > This application helps you build the perfect team for your game on Summoner's Rift based on your choice of champions. Simply pick the position and champion you'd like to play and see your team dominate the Rift. 
 
 ## Problem ##
-  > Often, when picking a champion within a team, a Rioter simply chooses any champion he wants. For those who are experienced with League of Legends, they strategize on picking the best champion combinations to create a well-balanced team that could increase their chance of winning the match. For those who are less experienced, the blind-pick strategy can sometimes be detrimental.
+  > Often, when picking a champion within a team, a Summoner simply chooses any champion he/she wants. For those who are experienced with League of Legends, they strategize on picking the best champion combinations to create a well-balanced team that could increase their chance of winning the match. For those who are less experienced, the blind-pick strategy can sometimes be detrimental.
 
 ## Solution ##
-  > This application can give both experienced and inexperienced players recommendations for champion selects based on the characters that have been taken or the characters that he wants to play.
+  > This application can give both experienced and inexperienced players champion recommendations based on the characters that have been taken or the characters that he/she wants to play.
 
 ## Quote from You ##
-  > "I hope this app will help new Rioters and players who are inexperienced with different champions have a better understanding of the game. " -Brian
+  > "I hope this app will help Summoners who are inexperienced with different champions have a better understanding of the game. " -Brian
 
 ## How to Get Started ##
   > Pick the position and champion you'd like to play/have been selected and you will get recommendations for other champions. 
 
 ## Customer Quote ##
-  > "Being a new Rioter myself, this app really helped me understand what champion works well with others. It really helped me explore many other champions based on my favorite champion, which is Teemo" - Satan
+  > "Being a new Summoner myself, this app really helped me understand what champion works well with others. It really helped me explore many other champions based on my favorite champion, which is Teemo" - Satan
+
+
+## Disclaimer ##
+> WatChamp isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
 
 ## Closing and Call to Action ##
-  > This code is based on official data and player experience. Please email me at ... if you'd have a recommendation you'd like to add to the app. Have fun.
+  > This code is based on official data and player experience. Please post an issue if you have a recommendation you'd like to add to the app. Have fun.
