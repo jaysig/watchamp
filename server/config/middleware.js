@@ -15,7 +15,7 @@ module.exports = function(app, express) {
   }));
   app.use(bodyParser.json());
   app.use(express.static(__dirname + '/../../client'));
-
+  //test
   //register /api/... and assign routers that will take care of it 
   app.use('/api/champs', champsRouter);
   app.use(helpers.errorLogger);
