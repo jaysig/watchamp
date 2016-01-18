@@ -5,9 +5,15 @@ table {
     cellspacing: 1;
     width: 1000px;
 }
+button{
+    color: black;
+}
+select {
+    background-color: black;
+}
 
 .champ-image {
-    height: 273px;
+    height: 100px;
     width: 150px;
 }
 
